@@ -31,9 +31,20 @@ function increment2(count, cb){
     }, 2000);
     console.log(`RUNS before 2sec setTimeout runs cb!!`);
 }
-
+/*
 increment2(0, (count) => {
     console.log(`cb says Count: ${count}`);
+});
+*/
+increment2(0, (count) => {
+    console.log(' >>>>>>>   Callback HELL started  <<<<<<<<< ');
+    console.log(`cb says Count: ${count}`);
+    increment2(0, (count) => {
+        console.log(`cb says Count: ${count}`);
+        increment2(0, (count) => {
+            console.log(`cb says Count: ${count}`);
+        });
+    });
 });
 
     
